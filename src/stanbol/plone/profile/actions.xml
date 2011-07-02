@@ -2,17 +2,17 @@
 <object name="portal_actions" meta_type="Plone Actions Tool"
 	xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 	<object name="document_actions" meta_type="CMF Action Category">
-		<object name="FiseEnhancements" 
+		<object name="StanbolEnhancements" 
 		        meta_type="CMF Action"
-			    i18n:domain="fise.plone">
+			    i18n:domain="stanbol.plone">
 			<property name="title" i18n:translate="">
-				FISE enhancements
+				Stanbol enhancements
 			</property>
 			<property name="description" i18n:translate="">
 				Apache Stanbol FISE RAW enhancements
 			</property>
 			<property name="url_expr">
-				string:${object/absolute_url}/@@fiseenhancements
+				string:${object/absolute_url}/@@stanbolenhancements
 			</property>
 			<property name="icon_expr"></property>
 			<property name="permissions">

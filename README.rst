@@ -8,13 +8,13 @@ example implementation and focal point for future work.
 
 Current features:
 
-- it provides a GenericSetup install step ``FISE Plone Integration``.
+- it provides a GenericSetup install step ``Stanbol Plone Integration``.
 
-- it expects a FISE server running at ``http://localhost:8080``. This is 
+- it expects a Stanbol server running at ``http://localhost:8080``. This is 
   hardcoded for now.
 
-- it passes the ``SearchableText`` of any Plone content to FISE. It depends on
-  the Plone configuration whats content is passed to FISE. 
+- it passes the ``SearchableText`` of any Plone content to Stanbol. It depends on
+  the Plone configuration whats content is passed to Stanbol. 
   
 - a view available as a document-action fetches the raw enhancement metadata 
   and shows it in Plone.
@@ -22,14 +22,14 @@ Current features:
 Installation 
 ------------
 
-In a Plone buildout add the a line with ``fise.plone`` to your instances 
+In a Plone buildout add the a line with ``stanbol.plone`` to your instances 
 ``eggs`` and `zcml``. 
 
 Run buildout.
 
 (Re)start Zope/Plone.
 
-In Configuration -> Addons: Install ``FISE Plone Integration``.
+In Configuration -> Addons: Install ``Stanbol Plone Integration``.
 
 Changelog
 =========
@@ -37,7 +37,7 @@ Changelog
 0.2
 ---
 
-- make fise server configureable through ``portal_properties``. See 
+- make stanbol server configureable through ``portal_properties``. See 
   ``propertiestool.xml`` in the profile for details. - jensens, 2011-01-26
 
 0.1

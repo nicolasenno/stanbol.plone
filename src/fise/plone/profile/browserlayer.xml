@@ -1,6 +1,0 @@
-<layers>
- <layer
-     name="fise.plone"
-     interface="fise.plone.Layer"
- />
-</layers>

@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 import sys, os
 
 version = '0.2'
-shortdesc = 'FISE Semantic Engine: RESTful Plone Integration.'
+shortdesc = 'Stanbol Semantic Engine: RESTful Plone Integration.'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 tests_require = ['interlude']
 
-setup(name='fise.plone',
+setup(name='stanbol.plone',
       version=version,
       description=shortdesc,
       long_description=longdesc,
@@ -29,11 +29,11 @@ setup(name='fise.plone',
       zip_safe=True,
       install_requires=[
             'setuptools',
-            'fise.client',
+            'stanbol.client',
             'Plone',
       ],
       tests_require=tests_require,
-      test_suite="fise.client.tests.test_suite",
+      test_suite="stanbol.client.tests.test_suite",
       extras_require = dict(
           test=tests_require,
       ),

@@ -3,24 +3,24 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="fise.plone">
+    i18n_domain="stanbol.plone">
     
     <include package="Products.CMFPlone" />
     
     <include file="profiles.zcml" />
     
     <browser:page
-        name="fiseenhancementsraw"
+        name="stanbolenhancementsraw"
         for="Products.Archetypes.interfaces.IBaseObject"
-        layer="fise.plone.Layer"
+        layer="stanbol.plone.Layer"
         permission="zope2.View"
         template="templates/raw.pt"
         class=".browser.RawEnhancementsView"
     />
     <browser:page
-        name="fiseenhancements"
+        name="stanbolenhancements"
         for="Products.Archetypes.interfaces.IBaseObject"
-        layer="fise.plone.Layer"
+        layer="stanbol.plone.Layer"
         permission="zope2.View"
         template="templates/enhancements.pt"
         class=".browser.RawEnhancementsView"
@@ -28,10 +28,10 @@
      
     <subscriber for="Products.Archetypes.interfaces.IBaseObject
                      Products.Archetypes.interfaces.IObjectInitializedEvent"
-                handler=".subscribers.fise_indexer_handler" />
+                handler=".subscribers.stanbol_indexer_handler" />
 
     <subscriber for="Products.Archetypes.interfaces.IBaseObject
                      Products.Archetypes.interfaces.IObjectEditedEvent"
-                handler=".subscribers.fise_indexer_handler" />
+                handler=".subscribers.stanbol_indexer_handler" />
               
  </configure>
