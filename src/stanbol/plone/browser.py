@@ -1,5 +1,5 @@
-#from Products.Five.browser import BrowserView
-from zope.publisher.browser import BrowserView
+from Products.Five.browser import BrowserView
+#from zope.publisher.browser import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
 
 import json
