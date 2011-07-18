@@ -59,3 +59,4 @@ class StanbolControlPanel(ControlPanelForm):
     label = _('Stanbol server settings')
     description = _('Enter Stanbol server settings to use with this site.')
     form_name = _('Stanbol')
+    

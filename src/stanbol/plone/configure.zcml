@@ -26,6 +26,14 @@
         class=".browser.RawEnhancementsView"
     />
      
+    <!-- Control Panel -->
+    <browser:page
+    	name="stanbol-settings"
+    	for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    	class=".controlpanel.StanbolControlPanel"
+    	permission="cmf.ManagePortal"
+    />
+     
     <subscriber for="Products.Archetypes.interfaces.IBaseObject
                      Products.Archetypes.interfaces.IObjectInitializedEvent"
                 handler=".subscribers.stanbol_indexer_handler" />
