@@ -6,6 +6,17 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="stanbol.plone">
     
+    <five:registerPackage package="." initialize=".initialize" />
+    
+    
+    <genericsetup:registerProfile
+      name="default"
+      title="collective.stanbol.plone"
+      directory="profiles/default"
+      description="Installs the collective.stanbol.plone package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+    <!-- -*- extra stuff goes here -*- -->
     
     <include package="Products.CMFPlone" />
     
