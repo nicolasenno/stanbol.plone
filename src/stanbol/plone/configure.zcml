@@ -15,9 +15,7 @@
     <include file="profiles.zcml" />
     
     <includeDependencies package="." />
-    
-    <five:registerPackage package="." initialize=".initialize" />
-    
+        
     <browser:page
         name="stanbolenhancementsraw"
         for="Products.Archetypes.interfaces.IBaseObject"
