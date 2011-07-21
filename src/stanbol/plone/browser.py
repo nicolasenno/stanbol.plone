@@ -1,8 +1,22 @@
 from Products.Five.browser import BrowserView
 #from zope.publisher.browser import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
-
+from stanbol.client import Stanbol
+from jquery.pyproxy.plone import JQueryProxy, jquery
+from stanbol.plone.utils import get_stanbol
 import json
+
+class CategoryEnhancementsView(BrowserView):
+    @jquery
+    def enhance(self, request):
+        jq = JQueryProxy()
+        form = request.POST
+        
+        stanbol = get_stanbol()
+        
+        jq('#subject_keywords').append('test')
+        return jq
+        
 
 class RawEnhancementsView(BrowserView):
     

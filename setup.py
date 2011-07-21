@@ -32,6 +32,7 @@ setup(name='stanbol.plone',
             'setuptools',
             'stanbol.client',
             'Plone',
+            'jquery.pyproxy'
       ],
       setup_requires=["PasteScript"],
       paster_plugins=["ZopeSkel"],

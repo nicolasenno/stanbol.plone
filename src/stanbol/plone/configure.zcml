@@ -32,6 +32,11 @@
         template="templates/enhancements.pt"
         class=".browser.RawEnhancementsView"
     />
+    
+    <browser:resourceDirectory
+    	name="stanbol.plone"
+    	directory="resources"
+    />
      
     <!-- Control Panel -->
     <!--
