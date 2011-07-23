@@ -8,11 +8,9 @@ from stanbol.plone.utils import get_stanbol
 
 class StanbolProxy():
     
-    @jquery
     def __init__(self):
         self.jq = JQueryProxy()
-        self.stanbol = get_stanbol()
-        pass
+        self.stanbol = get_stanbol(self)
     #
 
     @jquery

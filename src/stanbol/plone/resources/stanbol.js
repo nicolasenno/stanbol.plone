@@ -6,16 +6,17 @@ jQuery(document).ready(function() {
 		    return;
 		}
 		
+	
 		$("#fieldsetlegend-categorization").click(function() {
-			alert("Categorisation clicked !");
+			alert("Categorization clicked !");
+			$.pyproxycall('jq_engine_proxy', '#text_ifr');
 			// get TinyMCE content
 			//$("#text_ifr").contents().find("#content").html();
 			// appends data to keywords textarea
 			//$("#subject_keywords").append();
 		});
-		
-	});
-	
+
+	})(jQuery)
 });
 
 var EnhanceTags = function() {
