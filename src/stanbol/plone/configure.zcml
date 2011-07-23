@@ -19,7 +19,32 @@
     <browser:page
       for="*"
       name="jq_engine_proxy"
-      class=".StanbolProxy.engineProxy"
+      class=".StanbolProxy.StanbolProxy"
+      attribute="engineProxy"
+      permission="zope2.View"
+    />
+    
+    <browser:page
+      for="*"
+      name="jq_contenthub_proxy"
+      class=".StanbolProxy.StanbolProxy"
+      attribute="contentHubProxy"
+      permission="zope2.View"
+    />
+    
+    <browser:page
+      for="*"
+      name="jq_engine_call"
+      class=".StanbolProxy.StanbolProxy"
+      attribute="engineCall"
+      permission="zope2.View"
+    />
+    
+    <browser:page
+      for="*"
+      name="jq_contenthub_call"
+      class=".StanbolProxy.StanbolProxy"
+      attribute="contentHubCall"
       permission="zope2.View"
     />
         

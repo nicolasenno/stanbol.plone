@@ -3,7 +3,6 @@ Created on Jul 22, 2011
 
 @author: "Yannis Mazzer"
 '''
-from stanbol.client import Stanbol
 from jquery.pyproxy.plone import JQueryProxy, jquery
 from stanbol.plone.utils import get_stanbol
 
@@ -12,11 +11,17 @@ class StanbolProxy():
     @jquery
     def __init__(self):
         self.jq = JQueryProxy()
+        self.stanbol = get_stanbol()
         pass
     #
 
     @jquery
     def engineProxy(self):
+        content = self.jq("#text_ifr").contents().find("#content").html()
+        res = self.stanbol.engines(payload=content, format="jsonld",
+                             parsed=False)
+        
+        self.jq("#subject_keywords").append(res);
         return self.jq
     #
 

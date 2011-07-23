@@ -5,9 +5,17 @@ jQuery(document).ready(function() {
 		    /* jquery.pyproxy javascript file has not been set correctly.*/
 		    return;
 		}
+		
+		$("#fieldsetlegend-categorization").click(function() {
+			alert("Categorisation clicked !");
+			// get TinyMCE content
+			//$("#text_ifr").contents().find("#content").html();
+			// appends data to keywords textarea
+			//$("#subject_keywords").append();
+		});
+		
 	});
 	
-	alert('working js');
 });
 
 var EnhanceTags = function() {
