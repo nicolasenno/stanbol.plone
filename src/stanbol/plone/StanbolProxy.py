@@ -3,37 +3,42 @@ Created on Jul 22, 2011
 
 @author: "Yannis Mazzer"
 '''
+
+from Products.Five import BrowserView
 from jquery.pyproxy.plone import JQueryProxy, jquery
 from stanbol.plone.utils import get_stanbol
 
-class StanbolProxy():
-    
-    def __init__(self):
-        self.jq = JQueryProxy()
-        self.stanbol = get_stanbol(self)
-    #
+class StanbolProxy(BrowserView):
 
     @jquery
     def engineProxy(self):
-        content = self.jq("#text_ifr").contents().find("#content").html()
-        res = self.stanbol.engines(payload=content, format="jsonld",
+        jq = JQueryProxy()
+        stanbol = get_stanbol(self)
+        content = jq("#text_ifr").contents().find("#content").html()
+        res = stanbol.engines(payload=content, format="jsonld",
                              parsed=False)
         
-        self.jq("#subject_keywords").append(res);
-        return self.jq
+        self.jq("#subject_keywords").append(res)
+        return jq
     #
 
     @jquery  
     def contentHubProxy(self):
-        return self.jq
+        jq = JQueryProxy()
+        stanbol = get_stanbol(self)
+        #TODO
+        
+        return jq
     #
 
     @jquery
     def engineCall(self):
-        return self.jq
+        jq = JQueryProxy()
+        return jq
     #
 
     @jquery
     def contentHubCall(self):
-        return self.jq
+        jq = JQueryProxy()
+        return jq
     #

@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
 	
 		$("#fieldsetlegend-categorization").click(function() {
 			alert("Categorization clicked !");
-			$.pyproxycall('jq_engine_proxy', '#text_ifr');
+			$.pyproxy_call('/jq_engine_proxy', '#text_ifr');
 			// get TinyMCE content
 			//$("#text_ifr").contents().find("#content").html();
 			// appends data to keywords textarea
