@@ -57,6 +57,7 @@ class StanbolControlPanel(ControlPanelForm):
     form_fields['stanbol_server_address'].custom_widget = TextLine
     form_fields['stanbol_server_port'].custom_widget = TextLine
     
+    id = 'portal_stanbol'
     label = _('Stanbol server settings')
     description = _('Enter Stanbol server settings to use with this site.')
     form_name = _('Stanbol')

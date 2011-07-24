@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <object name="portal_stanbol" meta_type="StanbolTool">
  <property name="title">Apache Stanbol FISE properties</property>
- <property name="server" type="string">http://fise.demo.nuxeo.com/</property>
- <property name='port' type='integer'>80</property>
+ <property name="stanbol_server_address" type="string">http://fise.demo.nuxeo.com/</property>
+ <property name='stanbol_server_port' type='string'>80</property>
 </object>
