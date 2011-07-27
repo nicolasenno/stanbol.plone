@@ -14,11 +14,11 @@ class StanbolProxy(BrowserView):
     def engineProxy(self):
         jq = JQueryProxy()
         stanbol = get_stanbol(self)
-        content = jq("#text_ifr").contents().find("#content").html()
-        res = stanbol.engines(payload=content, format="jsonld",
-                             parsed=False)
+        #content = jq("#text_ifr").contents().find("#content").html()
+        #res = stanbol.engines(payload=content, format="jsonld",
+        #                     parsed=False)
         
-        self.jq("#subject_keywords").append(res)
+        jq("#subject_keywords").append('test')
         return jq
     #
 
