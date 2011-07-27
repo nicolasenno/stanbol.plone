@@ -2,7 +2,6 @@ from zope.interface import Interface
 from zope.i18nmessageid import MessageFactory
 StanbolMessageFactory = MessageFactory(u'stanbol.plone')
 
-
 class Layer(Interface):
     """Layer Marker"""
     
