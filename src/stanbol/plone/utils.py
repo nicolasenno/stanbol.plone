@@ -1,7 +1,7 @@
 from stanbol.client import Stanbol
 from Products.CMFCore.utils import getToolByName
 from zope.app.component.hooks import getSite
-SERVER = 'http://localhost:8080/'
+SERVER = 'http://localhost:8888/'
 
 def get_stanbol(context):
     ptool = getToolByName(context, 'portal_properties')
@@ -12,3 +12,4 @@ def get_stanbol(context):
     if stanbolprops is not None:
         return Stanbol(stanbolprops.stanbol_server_address)
     return Stanbol(SERVER)
+

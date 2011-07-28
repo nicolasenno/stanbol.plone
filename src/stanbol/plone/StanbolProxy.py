@@ -7,18 +7,30 @@ Created on Jul 22, 2011
 from Products.Five import BrowserView
 from jquery.pyproxy.plone import JQueryProxy, jquery
 from stanbol.plone.utils import get_stanbol
+import json
+import hashlib
+from rdflib.graph import Graph
 
 class StanbolProxy(BrowserView):
 
     @jquery
     def engineProxy(self):
         jq = JQueryProxy()
-        #stanbol = get_stanbol(self)
+        stanbol = get_stanbol(self)
         #content = jq("#text_ifr").contents().find("#content").html()
-        #res = stanbol.engines(payload=content, format="jsonld",
-        #                     parsed=False)
-        
-        jq("#subject_keywords").append('test')
+        content=self.request.form.get('text')
+        res = stanbol.engines(payload=content, format='rdfxml', parsed=True)
+	#g = Graph(res)
+	cache = {}
+	for t in res:
+		print t[2].title()
+		if t[2].istitle():
+			if t[2].datatype is None or t[2].datatype.endswith('string'):
+				cache[hashlib.md5(t[2].title()).hexdigest()] = t[2].title()
+	tags=""
+	for k in cache:
+		tags += cache[k] + '\n'
+        jq("#subject_keywords").html(tags)
         return jq
     #
 

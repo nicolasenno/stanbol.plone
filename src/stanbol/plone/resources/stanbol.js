@@ -8,8 +8,8 @@ jQuery(document).ready(function() {
 		
 	
 		$("#fieldsetlegend-categorization").click(function() {
-			alert("Categorization clicked !");
-			$.pyproxy_call('/jq_engine_proxy', '#text_ifr');
+      var data = { text : extractText($('#text_ifr').contents().find("#content").html())};
+			$.pyproxy_call('/jq_engine_proxy', data);
 			// get TinyMCE content
 			//$("#text_ifr").contents().find("#content").html();
 			// appends data to keywords textarea
@@ -22,3 +22,10 @@ jQuery(document).ready(function() {
 var EnhanceTags = function() {
 	//$.pyproxy_call();
 }
+
+var extractText = function (obj) {
+        return obj
+            .replace(/\s+/g, ' ') //collapse multiple whitespaces
+            .replace(/\0\b\n\r\f\t/g, '').trim() // remove non-letter symbols
+	    .replace(/(<([^>]+)>)/ig,""); // remove html tags
+};
