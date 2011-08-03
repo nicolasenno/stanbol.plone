@@ -16,20 +16,20 @@ class StanbolProxy(BrowserView):
     @jquery
     def engineProxy(self):
         jq = JQueryProxy()
-        stanbol = get_stanbol(self)
+        stanbol = get_stanbol(self.context)
         #content = jq("#text_ifr").contents().find("#content").html()
         content=self.request.form.get('text')
         res = stanbol.engines(payload=content, format='rdfxml', parsed=True)
 	#g = Graph(res)
-	cache = {}
-	for t in res:
-		print t[2].title()
-		if t[2].istitle():
-			if t[2].datatype is None or t[2].datatype.endswith('string'):
-				cache[hashlib.md5(t[2].title()).hexdigest()] = t[2].title()
-	tags=""
-	for k in cache:
-		tags += cache[k] + '\n'
+        cache = {}
+        for t in res:
+            print t[2].title()
+            if t[2].istitle():
+                if t[2].datatype is None or t[2].datatype.endswith('string'):
+                    cache[hashlib.md5(t[2].title()).hexdigest()] = t[2].title()
+        tags=""
+        for k in cache:
+            tags += cache[k] + '\n'
         jq("#subject_keywords").html(tags)
         return jq
     #

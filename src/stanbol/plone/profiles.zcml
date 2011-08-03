@@ -3,12 +3,12 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="stanbol.plone">
 
-  <include package="Products.GenericSetup" file="meta.zcml" />
+<!--  <include package="Products.GenericSetup" file="meta.zcml" /> -->
 
   <genericsetup:registerProfile
       name="default"
       title="Stanbol Plone Integration"
-      directory="profile"
+      directory="profiles/default"
       description="Basic Plone Integration for Apache Stanbol FISE"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
