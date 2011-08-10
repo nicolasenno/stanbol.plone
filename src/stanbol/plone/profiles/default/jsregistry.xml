@@ -1,7 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object name="portal_javascripts">
+<javascript id="jquery.js" remove="True" />
+
 <javascript cacheable="False" compression="none" cookable="False"
- enabled="True" expression="" id="++resource++stanbol.plone/stanbol.js"
- inline="False" />
+ enabled="True" expression="" id="++resource++stanbol.plone/jquery-1.5.1.js" 
+ inline="False" insert-before="jquery-integration.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/jquery-ui.1.9m5.js"
+ inline="False" insert-after="++resource++stanbol.plone/jquery-integration.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/underscore-min.js"
+ inline="False" insert-after="++resource++stanbol.plone/jquery-ui.1.9m5.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/backbone.js"
+ inline="False"  insert-after="++resource++stanbol.plone/underscore-min.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/vie.js"
+ inline="False" insert-after="++resource++stanbol.plone/backbone.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/vie-containermanager.js"
+ inline="False" insert-after="++resource++stanbol.plone/vie.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/vie-collectionmanager.js"
+ inline="False" insert-after="++resource++stanbol.plone/vie-containermanager.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/jquery.rdfquery.debug.js"
+ inline="False" insert-after="++resource++stanbol.plone/vie-collectionmanager.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/vie2/vie2-latest.debug.js"
+ inline="False" insert-after="++resource++stanbol.plone/jquery.rdfquery.debug.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/vie2/connector/stanbol.js"
+ inline="False" insert-after="++resource++stanbol.plone/vie2/vie2-latest.debug.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/vie2/mapping/person.js"
+ inline="False" insert-after="++resource++stanbol.plone/vie2/connector/stanbol.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/annotate.js"
+ inline="False" insert-after="++resource++stanbol.plone/vie2/mapping/person.js" />
+
+ <javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/openlayers-2.9/OpenLayers.js"
+ inline="False" insert-after="++resource++stanbol.plone/annotate.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/stanbol-integration.js"
+ inline="False" insert-after="*" />
 
 </object>

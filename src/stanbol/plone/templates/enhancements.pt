@@ -6,8 +6,7 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="RIMAB">
 <body>
-
-<metal:content-core fill-slot="content-core">
+<metal:main fill-slot="main">
     <metal:content-core define-macro="content-core">
         <h2>Stanbol Enhancements</h2>
         <tal:loop tal:repeat="item view/enhancements">
@@ -29,7 +28,7 @@
         </tal:loop>
         <hr />
     </metal:content-core>
-</metal:content-core>
+</metal:main>
 
 </body>
 </html>

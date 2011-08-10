@@ -16,53 +16,55 @@
     
     <includeDependencies package="." />
     
+    <!-- JQuery.PyProxy Entry points -->
+
     <browser:page
       for="*"
-      name="jq_engine_proxy"
-      class=".StanbolProxy.StanbolProxy"
-      attribute="engineProxy"
+      name="jq_enhance_tags"
+      class=".StanbolProxy.StanbolCall"
+      attribute="enhanceTags"
       permission="zope2.View"
     />
     
     <browser:page
       for="*"
-      name="jq_contenthub_proxy"
-      class=".StanbolProxy.StanbolProxy"
-      attribute="contentHubProxy"
+      name="jq_enhance_text"
+      class=".StanbolProxy.StanbolCall"
+      attribute="enhanceText"
       permission="zope2.View"
     />
-    
+
+    <!-- Stanbol Proxy views -->
     <browser:page
-      for="*"
-      name="jq_engine_call"
-      class=".StanbolProxy.StanbolProxy"
-      attribute="engineCall"
-      permission="zope2.View"
-    />
-    
-    <browser:page
-      for="*"
-      name="jq_contenthub_call"
-      class=".StanbolProxy.StanbolProxy"
-      attribute="contentHubCall"
-      permission="zope2.View"
-    />
-        
-    <browser:page
-        name="stanbolenhancementsraw"
-        for="Products.Archetypes.interfaces.IBaseObject"
+        name="engineproxy"
+        for="*"
         layer="stanbol.plone.Layer"
         permission="zope2.View"
-        template="templates/raw.pt"
-        class=".browser.RawEnhancementsView"
+        class=".StanbolProxy.EngineProxy"
     />
+
     <browser:page
-        name="stanbolenhancements"
-        for="Products.Archetypes.interfaces.IBaseObject"
+        name="contenthubproxy"
+        for="*"
         layer="stanbol.plone.Layer"
         permission="zope2.View"
-        template="templates/enhancements.pt"
-        class=".browser.RawEnhancementsView"
+        class=".StanbolProxy.ContentHubProxy"
+    />
+
+    <browser:page
+        name="entityhubproxy"
+        for="*"
+        layer="stanbol.plone.Layer"
+        permission="zope2.View"
+        class=".StanbolProxy.EntityHubProxy"
+    />
+
+    <browser:page
+        name="sites"
+        for="stanbol.plone.StanbolProxy.EntityHubProxy"
+        layer="stanbol.plone.Layer"
+        permission="zope2.View"
+        class=".StanbolProxy.EntityHubSiteProxy"
     />
     
     <browser:resourceDirectory

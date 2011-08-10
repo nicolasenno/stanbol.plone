@@ -6,7 +6,7 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="RIMAB">
 <body>
-
+<h1>TEST</h1>
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
         <pre tal:content="view/enhancements">md</pre>

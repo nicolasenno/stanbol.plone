@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/asf/!svn/ver/1143692/incubator/stanbol/trunk/commons/web/webvie/src/main/resources/org/apache/stanbol/enhancer/webvie/static/lib/vie2/connector
+END
+dbpedia.js
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/repos/asf/!svn/ver/1143692/incubator/stanbol/trunk/commons/web/webvie/src/main/resources/org/apache/stanbol/enhancer/webvie/static/lib/vie2/connector/dbpedia.js
+END
+rdfa.js
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/repos/asf/!svn/ver/1143692/incubator/stanbol/trunk/commons/web/webvie/src/main/resources/org/apache/stanbol/enhancer/webvie/static/lib/vie2/connector/rdfa.js
+END
+semantictweet.js
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/repos/asf/!svn/ver/1143692/incubator/stanbol/trunk/commons/web/webvie/src/main/resources/org/apache/stanbol/enhancer/webvie/static/lib/vie2/connector/semantictweet.js
+END
+opencalais.js
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/repos/asf/!svn/ver/1143692/incubator/stanbol/trunk/commons/web/webvie/src/main/resources/org/apache/stanbol/enhancer/webvie/static/lib/vie2/connector/opencalais.js
+END
+zemanta.js
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/repos/asf/!svn/ver/1143692/incubator/stanbol/trunk/commons/web/webvie/src/main/resources/org/apache/stanbol/enhancer/webvie/static/lib/vie2/connector/zemanta.js
+END
+stanbol.js
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/repos/asf/!svn/ver/1143692/incubator/stanbol/trunk/commons/web/webvie/src/main/resources/org/apache/stanbol/enhancer/webvie/static/lib/vie2/connector/stanbol.js
+END

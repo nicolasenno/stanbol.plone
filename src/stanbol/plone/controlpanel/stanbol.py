@@ -21,6 +21,7 @@ from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from zope.formlib.form import FormFields
 from plone.app.controlpanel.form import ControlPanelForm
 
+from stanbol.plone import StanbolMessageFactory as _
 
 class IStanbolSchema(Interface):
     stanbol_server_address = Tuple (
