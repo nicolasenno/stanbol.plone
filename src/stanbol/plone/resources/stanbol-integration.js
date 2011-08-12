@@ -16,12 +16,14 @@ jQuery(document).ready(function() {
 			// appends data to keywords textarea
 			//$("#subject_keywords").append();
 		});
+    $("#content").append('<div id="enhanceable" editable=true style="width:100%; min-height: 100px"><div>');
+    $("#enhanceable").append($("#content", $("#text_ifr").contents()).html());
     $("#content").append('<button class="enhanceButton"><span>Enhance !</span></button>');
     VIE2.logLevels=[];    
-    $($("#text_ifr").contents()).ready(function(){        
+    $("#content", $("#text_ifr").contents()).ready(function(){        
       VIE2.connectors['stanbol'].options({            
         "enhancer_url" : "/Plone/front-page/engineproxy",            
-        "entityhub_url" : "/entityhub"        
+        "entityhub_url" : "/Plone/entityhubproxy"        
       });        
       $('article.active-enhancement').remove();                
       // make the content area editable       

@@ -66,6 +66,24 @@
         permission="zope2.View"
         class=".StanbolProxy.EntityHubSiteProxy"
     />
+
+    <browser:page
+        name="entity"
+        for="stanbol.plone.StanbolProxy.EntityHubSiteProxy"
+        layer="stanbol.plone.Layer"
+        permission="zope2.View"
+        class=".StanbolProxy.EntityHubSiteActions"
+        attribute="entity"
+    />
+
+    <browser:page
+        name="find"
+        for="stanbol.plone.StanbolProxy.EntityHubSiteProxy"
+        layer="stanbol.plone.Layer"
+        permission="zope2.View"
+        class=".StanbolProxy.EntityHubSiteActions"
+        attribute="find"
+    />
     
     <browser:resourceDirectory
     	name="stanbol.plone"

@@ -86,9 +86,80 @@ class EntityHubSiteProxy(BrowserView):
         response = self.request.response
         stanbol = get_stanbol(self.context)
         print self.request["URL"]
+        req = self.request["URL"].split("sites")
+        req = req[1]
         #TODO
         return ''
     #
+
+class EntityHubSiteActions(BrowserView):
+
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+    #
+
+    def referenced(self):
+        stanbol = get_stanbol(self.context)
+        res = stanbol.entityHubSite().get_referenced_sites()
+        return res
+    #
+
+    def entity(self):
+        if self.request.form['id']:
+            uri = self.request.form['id']
+        stanbol = get_stanbol(self.context)
+        ehs = stanbol.entityHubSite
+        if uri:
+            res = ehs.get_entity(uri)
+            return res
+        return '' 
+    #
+
+    def find(self):
+        # name
+        # field
+        # lang
+        # limit
+        # offset
+        
+        stanbol = get_stanbol(self.context)
+        ehs = stanbol.entityHubSite
+        try:
+            _name = self.request.form['name']
+        except:
+            _name = None
+        try:
+            _field = self.request.form['field']
+        except:
+            _field = None
+        try:
+            _lang = self.request.form['lang']
+        except:
+            _lang = None
+        try:
+            _limit = self.request.form['limit']
+        except:
+            _limit = None
+        try:
+            _offset = self.request.form['offset']
+        except:
+            _offset = None
+
+        res = ehs.find(
+            name = _name, 
+            field=_field, 
+            lang=_lang, 
+            limit=_limit,
+            offset=_offset
+        )
+        return res
+    #
+
+    def query(self):
+        pass
+    #
+#
 
 class StanbolCall(BrowserView):
 

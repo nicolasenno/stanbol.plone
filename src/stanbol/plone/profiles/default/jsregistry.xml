@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object name="portal_javascripts">
+
+<!--
 <javascript id="jquery.js" remove="True" />
+-->
 
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/jquery-1.5.1.js" 
@@ -49,10 +52,6 @@
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/annotate.js"
  inline="False" insert-after="++resource++stanbol.plone/vie2/mapping/person.js" />
-
- <javascript cacheable="False" compression="none" cookable="False"
- enabled="True" expression="" id="++resource++stanbol.plone/openlayers-2.9/OpenLayers.js"
- inline="False" insert-after="++resource++stanbol.plone/annotate.js" />
 
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/stanbol-integration.js"
