@@ -8,19 +8,28 @@ jQuery(document).ready(function() {
 		
     //var text_container = $("#content", $("#text_ifr").contents());
 	
+    $("#sparql_submitter").click(function() {
+      var data = { text : $("#sparql_query").val()};
+      $.pyproxy_call('/jq_sparql', data);
+    });
+    $(".prettyprint").change(function() {
+      prettyPrint();
+    });
 		$("#fieldsetlegend-categorization").click(function() {
-      var data = { text : extractText($("#content", $("#text_ifr").contents()).html())};
+
+      var content = $("#content", $("#text_ifr").contents()).html();
+      if(content===null) {
+        var content = $("#text").val();
+      }
+      var data = { text : extractText(content)};
 			$.pyproxy_call('/jq_enhance_tags', data);
 			// get TinyMCE content
 			//$("#text_ifr").contents().find("#content").html();
 			// appends data to keywords textarea
 			//$("#subject_keywords").append();
 		});
-    $("#content").append('<div id="enhanceable" editable=true style="width:100%; min-height: 100px"><div>');
-    $("#enhanceable").append($("#content", $("#text_ifr").contents()).html());
-    $("#content").append('<button class="enhanceButton"><span>Enhance !</span></button>');
     VIE2.logLevels=[];    
-    $("#content", $("#text_ifr").contents()).ready(function(){        
+    
       VIE2.connectors['stanbol'].options({            
         "enhancer_url" : "/Plone/front-page/engineproxy",            
         "entityhub_url" : "/Plone/entityhubproxy"        
@@ -35,7 +44,7 @@ jQuery(document).ready(function() {
       //});        
       
       //$('.mce_editable').annotate({
-      $("#content", $("#text_ifr").contents()).annotate({
+      $("#parent-fieldname-text").annotate({
         connector: VIE2.connectors['stanbol'],            
         debug: true,            
         decline: function(event, ui){                
@@ -48,6 +57,7 @@ jQuery(document).ready(function() {
           console.info('remove event', event, ui);            
         }        
       });                
+      $('.saverButton').button();
       $('.enhanceButton').button({enhState: 'passiv'}).click(function(){            
         // Button with two states            
         var oldState = $(this).button('option', 'enhState');            
@@ -56,7 +66,7 @@ jQuery(document).ready(function() {
         if($(this).button('option', 'enhState') === 'active'){                
           // annotate.enable()                
           try {                    
-            $("#content", $("#text_ifr").contents()).annotate('enable', function(success){                        
+            $("#parent-fieldname-text").annotate('enable', function(success){                        
               if(success){                            
                 $('.enhanceButton').button('enable').button('option', 'label', 'Done');     
               } else {                            
@@ -71,11 +81,10 @@ jQuery(document).ready(function() {
         } 
         else {
           // annotate.disable()                
-          $("#content", $("#text_ifr").contents()).annotate('disable');                
+          $("#parent-fieldname-text").annotate('disable');                
           $('.enhanceButton').button('option', 'label', 'Enhance!');            
         }        
       });    
-    });    
 
 	})(jQuery)
 });
@@ -88,5 +97,6 @@ var extractText = function (obj) {
         return obj
             .replace(/\s+/g, ' ') //collapse multiple whitespaces
             .replace(/\0\b\n\r\f\t/g, '').trim() // remove non-letter symbols
+            .replace(/[;:.,\"\'\-]/g, '') //remove ;
 	    .replace(/(<([^>]+)>)/ig,""); // remove html tags
 };

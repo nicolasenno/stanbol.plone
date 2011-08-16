@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="RIMAD">
+
+
+
+<body>
+<metal:block metal:fill-slot="base">
+  <metal:block metal:define-macro="base">
+    <base tal:attributes="href python:here.absolute_url()+'/enhancer'" />
+  </metal:block>
+</metal:block>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+      <!--
+        <div tal:define="ids context/objectIds"> 
+          Body text
+        </div> 
+        -->
+        <div metal:use-macro="python:context.widget('text', mode='view')">
+            Body Text
+        </div>
+        <div id="enhControls">
+          <button class="enhanceButton">Enhance !</button>
+          <button class="saverButton">Save !</button>
+        </div>
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

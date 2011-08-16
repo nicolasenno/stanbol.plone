@@ -12,4 +12,16 @@
       insert-after="*"
   />
 
+  <stylesheet title="" cacheable="True" compression="safe" cookable="True"
+      enabled="1" id="++resource++stanbol.plone/sparql.css" media="screen"
+      rel="stylesheet" rendering="import"
+      insert-after="*"
+  />
+
+  <stylesheet title="" cacheable="True" compression="safe" cookable="True"
+      enabled="1" id="++resource++stanbol.plone/prettify/prettify.css" media="screen"
+      rel="stylesheet" rendering="import"
+      insert-after="*"
+  />
+
 </object>

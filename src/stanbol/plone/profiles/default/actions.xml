@@ -2,65 +2,8 @@
 <object name="portal_actions" meta_type="Plone Actions Tool"
 	xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 	<action-provider name='portal_actions' />
-	<object name="document_actions" meta_type="CMF Action Category">
 
-		<object name="ContentHubProxy" 
-		        meta_type="CMF Action"
-			    i18n:domain="stanbol.plone">
-			<property name="title" i18n:translate="">
-				Stanbol ContentHub Proxy 
-			</property>
-			<property name="description" i18n:translate="">
-				Apache Stanbol ContentHub Proxy 
-			</property>
-			<property name="url_expr">
-				string:/contenthubproxy
-			</property>
-			<property name="icon_expr"></property>
-			<property name="permissions">
-				<element value="View" />
-			</property>
-			<property name="visible">True</property>
-		</object>
-
-		<object name='EngineProxy'
-				meta_type='CMF Action'
-				i18n:domain='stanbol.plone'>
-			<property name='title' i18n:translate=''>
-				Stanbol Engine Proxy
-			</property>
-			<property name='description' i18n:translate=''>
-				Apache Stanbol Engine Proxy
-			</property>
-			<property name='url_expr'>
-				string:$portal_url/engineproxy
-			</property>
-			<property name='icon_expr'></property>
-			<property name='permissions'>
-				<element value='View' />
-			</property>
-			<property name='visible'>True</property>
-		</object>
-    
-    <object name='EnhanceTags'
-        meta_type='CMF Action'
-        i18n:domain='stanbol.plone'>
-      <property name='title' i18n:translate=''>
-        Stanbol Tags Enhancer
-      </property>
-      <property name='description' i18n:translate=''>
-        Apache Stanbol Tags Enhancer
-      </property>
-      <property name='url_expr'>
-        string:$object_url/enhancetags
-      </property>
-			<property name='icon_expr'></property>
-			<property name='permissions'>
-				<element value='View' />
-			</property>
-			<property name='visible'>True</property>
-		</object>
-
+  <object name="object" meta_type="CMF Action Category">
     <object name='EnhanceText'
         meta_type='CMF Action'
         i18n:domain='stanbol.plone'>
@@ -71,14 +14,34 @@
         Apache Stanbol Text Enhancer
       </property>
       <property name='url_expr'>
-        string:$object_url/enhancetext
+        string:$object_url/enhancer
       </property>
 			<property name='icon_expr'></property>
 			<property name='permissions'>
-				<element value='View' />
+				<element value='Edit ReStructuredText' />
 			</property>
 			<property name='visible'>True</property>
 		</object>
-	
 	</object>
+
+  <object name="user" meta_type="CMF Action Category">
+    <object name='SparQL'
+        meta_type='CMF Action'
+        i18n:domain='stanbol.plone'>
+      <property name='title' i18n:translate=''>
+        Stanbol SparQL Console
+      </property>
+      <property name='description' i18n:translate=''>
+        Apache Stanbol SparQL Console
+      </property>
+      <property name='url_expr'>
+        string:$portal_url/sparql
+      </property>
+      <property name='icon_expr'></property>
+      <property name='permissions'>
+        <element value='Edit ReStructuredText' />
+      </property>
+      <property name='visible'>True</property>
+    </object>
+  </object>
 </object>

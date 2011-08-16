@@ -104,7 +104,9 @@ VIE2.connectors['stanbol'].extractText = function (obj) {
         return obj
             .text()    //get the text of element
             .replace(/\s+/g, ' ') //collapse multiple whitespaces
-            .replace(/\0\b\n\r\f\t/g, '').trim(); // remove non-letter symbols
+            .replace(/\0\b\n\r\f\t/g, '').trim()// remove non-letter symbols
+            .replace(/;/g, '') //remove ;
+	          .replace(/(<([^>]+)>)/ig,""); // remove html tags
     }
 };
 

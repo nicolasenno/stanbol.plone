@@ -7,15 +7,15 @@
 
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/jquery-1.5.1.js" 
- inline="False" insert-before="jquery-integration.js" />
+ inline="False" insert-before="++resource++stanbol.plone/jquery-ui.1.9m5.js" />
 
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/jquery-ui.1.9m5.js"
- inline="False" insert-after="++resource++stanbol.plone/jquery-integration.js" />
+ inline="False" insert-before="jquery-integration.js" />
 
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/underscore-min.js"
- inline="False" insert-after="++resource++stanbol.plone/jquery-ui.1.9m5.js" />
+ inline="False" insert-after="++resource++stanbol.plone/jquery-integration.js" />
 
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/backbone.js"
@@ -51,6 +51,10 @@
 
 <javascript cacheable="False" compression="none" cookable="False"
  enabled="True" expression="" id="++resource++stanbol.plone/annotate.js"
+ inline="False" insert-after="++resource++stanbol.plone/vie2/mapping/person.js" />
+
+<javascript cacheable="False" compression="none" cookable="False"
+ enabled="True" expression="" id="++resource++stanbol.plone/prettify/prettify.js"
  inline="False" insert-after="++resource++stanbol.plone/vie2/mapping/person.js" />
 
 <javascript cacheable="False" compression="none" cookable="False"

@@ -34,6 +34,14 @@
       permission="zope2.View"
     />
 
+    <browser:page
+      for="*"
+      name="jq_sparql"
+      class=".StanbolProxy.StanbolCall"
+      attribute="sparqlCall"
+      permission="zope2.View"
+    />
+
     <!-- Stanbol Proxy views -->
     <browser:page
         name="engineproxy"
@@ -83,6 +91,22 @@
         permission="zope2.View"
         class=".StanbolProxy.EntityHubSiteActions"
         attribute="find"
+    />
+
+    <browser:page
+        name="enhancer"
+        for="Products.Archetypes.interfaces.IBaseObject"
+        layer="stanbol.plone.Layer"
+        permission="zope2.View"
+        template="templates/enhancer.pt"
+    />
+
+    <browser:page
+        name='sparql'
+        for="*"
+        layer="stanbol.plone.Layer"
+        permission="zope2.View"
+        template="templates/sparql.pt"
     />
     
     <browser:resourceDirectory

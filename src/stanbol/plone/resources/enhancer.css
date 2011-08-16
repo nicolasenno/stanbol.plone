@@ -23,3 +23,15 @@ a[typeof][about].place        {background-color: #fef;}
 .entity.organisation,
 a[typeof][about].organisation {background-color: #eff;}
 
+#parent-fieldname-text { 
+  text-align: justify;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#enhControls {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
