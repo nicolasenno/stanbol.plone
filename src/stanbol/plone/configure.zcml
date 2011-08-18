@@ -28,14 +28,6 @@
     
     <browser:page
       for="*"
-      name="jq_enhance_text"
-      class=".StanbolProxy.StanbolCall"
-      attribute="enhanceText"
-      permission="zope2.View"
-    />
-
-    <browser:page
-      for="*"
       name="jq_sparql"
       class=".StanbolProxy.StanbolCall"
       attribute="sparqlCall"
@@ -99,6 +91,15 @@
         layer="stanbol.plone.Layer"
         permission="zope2.View"
         template="templates/enhancer.pt"
+    />
+
+    <browser:page
+        name="enhancementSaver"
+        for="Products.Archetypes.interfaces.IBaseObject"
+        layer="stanbol.plone.Layer"
+        permission="zope2.View"
+        class=".StanbolProxy.StanbolCall"
+        attribute="enhancementSaver"
     />
 
     <browser:page

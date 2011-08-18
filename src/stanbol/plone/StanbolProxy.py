@@ -1,42 +1,16 @@
 '''
 Created on Jul 22, 2011
 
+@author: "Encolpe Degoute"
+@author: "Jens W. Klein"
 @author: "Yannis Mazzer"
 '''
 
 from Products.Five import BrowserView
+from Products.CMFCore.utils import getToolByName
 from jquery.pyproxy.plone import JQueryProxy, jquery
 from stanbol.plone.utils import get_stanbol
 import hashlib
-
-class StanbolProxy(BrowserView):
-    """
-
-    """
-    def engineProxy(self, data, fat):
-        """
-        @param self
-        @param data
-        @param fat
-        @return
-        """
-        stanbol = get_stanbol(self.context)
-        res = stanbol.engines(payload=data, format=fat, parsed=False)
-        return res
-    #
-
-    def contentHubProxy(self):
-        """
-        @param self
-        @return
-        """
-        jq = JQueryProxy()
-        stanbol = get_stanbol(self.context)
-        #TODO
-        
-        return jq
-    #
-#
 
 class EngineProxy(BrowserView):
     """
@@ -140,7 +114,7 @@ class EntityHubSiteProxy(BrowserView):
 
     def __init__(self, context, request):
         """
-        Initializes EntityHubProxy class
+        Initializes EntityHubSiteProxy class
         @param self: the object itself
         @param context: the BrowserView context
         @param request: the Zope.View request
@@ -172,6 +146,7 @@ class EntityHubSiteActions(BrowserView):
 
     def __init__(self, context, request):
         """
+        Initializes EntityHubSiteActions class
         @param self: the object itself
         @param context: the BrowserView context
         @param request: The Zope.View request
@@ -263,11 +238,17 @@ class StanbolCall(BrowserView):
     View for Plone specific functionnalities
     """
 
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+    #
+
     def contentHubCall(self, data):
         """
+        Returns result from processing data with Stanbol contentHub
         @param self: the object itself
-        @param data
-        @return
+        @param data: data to process
+        @return results
         """
         jq = JQueryProxy()
         return jq
@@ -277,7 +258,7 @@ class StanbolCall(BrowserView):
         """
         Returns the graph resulting from processing data with Stanbol engine
         @param self: the object itself
-        @param data: data to analyse
+        @param data: data to process
         @return the rdflib graph
         """
         stanbol = get_stanbol(self.context)
@@ -335,16 +316,14 @@ class StanbolCall(BrowserView):
         return jq   
     #
 
-    @jquery
-    def enhanceText(self):
-        """
-        Enhances text by adding rdfa metadata in it
-        @param self: the object itself
-        @return RDFa metadata
-        """
-        jq = JQueryProxy()
-        content = self.request.form.get('text')
-        res = self.engineProxy(content, 'jsonld')
-        return res
+    def enhancementSaver(self):
+        try:
+            res = self.request.form['enhancedtext']
+            self.context.edit(text_format="html", text = res)
+            print self.context.CookedBody()
+            return "Saved"
+        except:
+            return 'An error occured'
     #
+
 #

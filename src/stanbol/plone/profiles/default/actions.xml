@@ -22,6 +22,24 @@
 			</property>
 			<property name='visible'>True</property>
 		</object>
+    <object name='EnhancementSaver'
+        meta_type='CMF Action'
+        i18n:domain='stanbol.plone'>
+      <property name='title' i18n:translate=''>
+        Stanbol Text Enhancement saver
+      </property>
+      <property name='description' i18n:translate=''>
+        Apache Stanbol Text Enhancement saver
+      </property>
+      <property name='url_expr'>
+        string:$object_url/enhancementSaver
+      </property>
+			<property name='icon_expr'></property>
+			<property name='permissions'>
+				<element value='Edit ReStructuredText' />
+			</property>
+			<property name='visible'>True</property>
+		</object>
 	</object>
 
   <object name="user" meta_type="CMF Action Category">

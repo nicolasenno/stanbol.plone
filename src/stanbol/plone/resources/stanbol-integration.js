@@ -12,6 +12,24 @@ jQuery(document).ready(function() {
       var data = { text : $("#sparql_query").val()};
       $.pyproxy_call('/jq_sparql', data);
     });
+    $(".saverButton").click(function() {
+      var successcall = function(response) {
+          $(".saverButton span").html("Saved !");
+      };
+      var errorcall = function(response) {
+          alert(response);
+      };
+      var data = { 'enhancedtext' : $("#parent-fieldname-text").html() }
+      jQuery.ajax({
+        async: false,
+        success: successcall,
+        error: errorcall,
+        type: "POST",
+        url: "enhancementSaver",
+        data: data,
+        contentType: "application/x-www-form-urlencoded"
+      });
+    });
     $(".prettyprint").change(function() {
       prettyPrint();
     });

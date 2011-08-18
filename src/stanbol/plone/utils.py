@@ -4,6 +4,9 @@ from zope.app.component.hooks import getSite
 SERVER = 'http://localhost:8888/'
 
 def get_stanbol(context):
+    """
+    Utilitary function to access Stanbol preferences
+    """
     #ptool = getToolByName(context, 'portal_properties')
     #stanbolprops = ptool.get('stanbol_properties', None)
     ##stanbolprops = getToolByName(context, 'portal_stanbol')

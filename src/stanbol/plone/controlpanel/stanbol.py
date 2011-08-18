@@ -1,6 +1,8 @@
 '''
 Created on Jul 7, 2011
 
+@author: "Encolpe Degoute"
+@author: "Jens W. Klein"
 @author: "Yannis Mazzer"
 '''
 
@@ -24,6 +26,9 @@ from plone.app.controlpanel.form import ControlPanelForm
 from stanbol.plone import StanbolMessageFactory as _
 
 class IStanbolSchema(Interface):
+    """
+    Stanbol Preference Pane Interface
+    """
     stanbol_server_address = Tuple (
         title=u'Stanbol server address',
         description=_('help_stanbol_server_address',
@@ -41,6 +46,9 @@ class IStanbolSchema(Interface):
       
 
 class StanbolControlPanelAdapter(SchemaAdapterBase):
+    """
+    Stanbol Preference Pane Schema Adapter
+    """
     adapts(IPloneSiteRoot)
     implements(IStanbolSchema)
     
@@ -54,6 +62,9 @@ class StanbolControlPanelAdapter(SchemaAdapterBase):
 
 
 class StanbolControlPanel(ControlPanelForm):
+    """
+    Stanbol Control Panel Form
+    """
     form_fields = FormFields(IStanbolSchema)
     form_fields['stanbol_server_address'].custom_widget = TextLine
     form_fields['stanbol_server_port'].custom_widget = TextLine
