@@ -23,7 +23,10 @@ from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from zope.formlib.form import FormFields
 from plone.app.controlpanel.form import ControlPanelForm
 
-from stanbol.plone import StanbolMessageFactory as _
+from zope.i18nmessageid import MessageFactory
+_ = MessageFactory(u'stanbol.plone')
+
+#from stanbol.plone import StanbolMessageFactory as _
 
 class IStanbolSchema(Interface):
     """

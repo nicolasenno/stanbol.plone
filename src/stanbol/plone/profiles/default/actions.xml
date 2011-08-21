@@ -38,7 +38,7 @@
 			<property name='permissions'>
 				<element value='Edit ReStructuredText' />
 			</property>
-			<property name='visible'>True</property>
+			<property name='visible'>False</property>
 		</object>
 	</object>
 
