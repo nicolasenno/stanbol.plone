@@ -307,11 +307,11 @@ class StanbolCall(BrowserView):
                     cache[hashlib.md5(t[2].title()).hexdigest()] = t[2].title()
         tags=""
         for k in cache:
-            test = jq("#subject input[value='"+cache[k]+"']")
-            jq("#subject input[value='"+cache[k]+"']").attr('checked', 'checked')
-            print test
+            #test = jq("#subject input[value='"+cache[k]+"']")
+            #jq("#subject input[value='"+cache[k]+"']").attr('checked', 'checked')
+            #print test
             tags += cache[k] + '\n'
-        print tags
+        #print tags
         jq("#subject_keywords").html(tags)
         return jq   
     #

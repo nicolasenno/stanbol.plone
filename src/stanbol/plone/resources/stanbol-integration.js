@@ -49,8 +49,8 @@ jQuery(document).ready(function() {
     VIE2.logLevels=[];    
     
       VIE2.connectors['stanbol'].options({            
-        "enhancer_url" : "/Plone/front-page/engineproxy",            
-        "entityhub_url" : "/Plone/entityhubproxy"        
+        "enhancer_url" : "/front-page/engineproxy",            
+        "entityhub_url" : "/entityhubproxy"        
       });        
       $('article.active-enhancement').remove();                
       // make the content area editable       
