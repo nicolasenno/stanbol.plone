@@ -5,17 +5,29 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="stanbol.plone">
-    
+
     <five:registerPackage package="." initialize=".initialize" />
 
     <!-- -*- extra stuff goes here -*- -->
-    
+
     <include package="Products.CMFPlone" />
-    
+
+    <include package="plone.app.registry" />
+
     <include file="profiles.zcml" />
-    
+
     <includeDependencies package="." />
-    
+
+    <!-- Control Panel -->
+
+    <browser:page
+        name="stanbol-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.stanbolpanel.StanbolControlPanel"
+        permission="cmf.ManagePortal"
+        />
+
+
     <!-- JQuery.PyProxy Entry points -->
 
     <browser:page
@@ -25,7 +37,7 @@
       attribute="enhanceTags"
       permission="zope2.View"
     />
-    
+
     <browser:page
       for="*"
       name="jq_sparql"
@@ -109,23 +121,12 @@
         permission="zope2.View"
         template="templates/sparql.pt"
     />
-    
+
     <browser:resourceDirectory
-    	name="stanbol.plone"
-    	directory="resources"
+        name="stanbol.plone"
+        directory="resources"
     />
-     
-    <!-- Control Panel -->
-    <!-- 
-    <browser:page
-    	name="stanbol-settings"
-    	for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    	class=".controlpanel.StanbolControlPanel"
-    	permission="cmf.ManagePortal"
-    />
-    -->
-    
-     
+
     <subscriber for="Products.Archetypes.interfaces.IBaseObject
                      Products.Archetypes.interfaces.IObjectInitializedEvent"
                 handler=".subscribers.stanbol_indexer_handler" />
@@ -133,5 +134,5 @@
     <subscriber for="Products.Archetypes.interfaces.IBaseObject
                      Products.Archetypes.interfaces.IObjectEditedEvent"
                 handler=".subscribers.stanbol_indexer_handler" />
-              
+
  </configure>

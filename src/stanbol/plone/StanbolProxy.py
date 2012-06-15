@@ -16,7 +16,7 @@ class EngineProxy(BrowserView):
     """
     Proxy View for calls to Apache Stanbol Engines
     """
-    
+
     def __init__(self, context, request):
         """
         Initializes EngineProxy class
@@ -36,7 +36,7 @@ class EngineProxy(BrowserView):
                 object
         """
         response = self.request.response
-        stanbol = get_stanbol(self.context) 
+        stanbol = get_stanbol(self.context)
         print self.request.form
         try:
             print self.request.form['data']
@@ -45,9 +45,8 @@ class EngineProxy(BrowserView):
             print res
             return res
         except:
-            return '{}' 
-    #
-#
+            return '{}'
+
 
 class ContentHubProxy(BrowserView):
     """
@@ -63,20 +62,19 @@ class ContentHubProxy(BrowserView):
         """
         self.context = context
         self.request = request
-    #
+
 
     def __call__(self):
         """
         Method called when ContentHubProxy is called
         @param self: the object itself
-        @return: the Stanbol ContentHub results 
+        @return: the Stanbol ContentHub results
         """
         response = self.request.response
         stanbol = get_stanbol(self.context)
         #TODO
         return ''
-    #
-#
+
 
 class EntityHubProxy(BrowserView):
     """
@@ -98,18 +96,16 @@ class EntityHubProxy(BrowserView):
         """
         Method called when EntityHubProxy is called
         @param self: the object itself
-        @return: the Stanbol EntityHub results 
+        @return: the Stanbol EntityHub results
         """
         response = self.request.response
         stanbol = get_stanbol(self.context)
         #TODO
         return ''
-    #
-#
 
 class EntityHubSiteProxy(BrowserView):
     """
-    Proxy View for calls to Apache Stanbol EntityHub sites 
+    Proxy View for calls to Apache Stanbol EntityHub sites
     """
 
     def __init__(self, context, request):
@@ -127,7 +123,7 @@ class EntityHubSiteProxy(BrowserView):
         """
         Method called when EntityHubSiteProxy is called
         @param self: the object itself
-        @return: the Stanbol EntityHub sites results 
+        @return: the Stanbol EntityHub sites results
         """
         response = self.request.response
         stanbol = get_stanbol(self.context)
@@ -136,8 +132,7 @@ class EntityHubSiteProxy(BrowserView):
         req = req[1]
         #TODO
         return ''
-    #
-#
+
 
 class EntityHubSiteActions(BrowserView):
     """
@@ -177,7 +172,7 @@ class EntityHubSiteActions(BrowserView):
         if uri:
             res = ehs.get_entity(uri)
             return res
-        return '' 
+        return ''
     #
 
     def find(self):
@@ -190,7 +185,7 @@ class EntityHubSiteActions(BrowserView):
         # lang
         # limit
         # offset
-        
+
         stanbol = get_stanbol(self.context)
         ehs = stanbol.entityHubSite
         try:
@@ -215,9 +210,9 @@ class EntityHubSiteActions(BrowserView):
             _offset = None
 
         res = ehs.find(
-            name = _name, 
-            field=_field, 
-            lang=_lang, 
+            name = _name,
+            field=_field,
+            lang=_lang,
             limit=_limit,
             offset=_offset
         )
@@ -253,7 +248,7 @@ class StanbolCall(BrowserView):
         jq = JQueryProxy()
         return jq
     #
-    
+
     def engineCall(self, data):
         """
         Returns the graph resulting from processing data with Stanbol engine
@@ -290,7 +285,7 @@ class StanbolCall(BrowserView):
     @jquery
     def enhanceTags(self):
         """
-        Enhances text by extracting keywords from it 
+        Enhances text by extracting keywords from it
         @param self: the object itself
         @return keywords
         """
@@ -313,8 +308,7 @@ class StanbolCall(BrowserView):
             tags += cache[k] + '\n'
         #print tags
         jq("#subject_keywords").html(tags)
-        return jq   
-    #
+        return jq
 
     def enhancementSaver(self):
         try:
@@ -324,6 +318,4 @@ class StanbolCall(BrowserView):
             return "Saved"
         except:
             return 'An error occured'
-    #
 
-#

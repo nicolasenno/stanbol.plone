@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<object name="portal_properties" meta_type="Plone Properties Tool">
-	<object name="stanbol_properties" meta_type="Plone Property Sheet">
-		<property name="title" purge="False">Apache Stanbol FISE properties</property>
-		<property name="stanbol_server_address" type="string" purge="False">http://fise.demo.nuxeo.com/</property>
-		<property name='stanbol_server_port' type='string' purge="False">80</property>
-	</object>
-</object>

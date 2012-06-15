@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object name="portal_controlpanel"
-        meta_type="Plone Control Panel Tool">
- <configlet title="Stanbol Settings"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="stanbol.plone"
+    purge="False">
+    <configlet title="Stanbol Settings"
             action_id="stanbol"
             appId="stanbol.plone"
-            category="Plone"
+            category="Products"
             condition_expr=""
-            url_expr="string:${portal_url}/portal_stanbol"
-            visible="True">
-  <permission>Manage portal</permission>
- </configlet>
+            url_expr="string:${portal_url}/stanbol-settings"
+            visible="True"
+            i18n:attributes="title"
+            >
+        <permission>Manage portal</permission>
+    </configlet>
 </object>
