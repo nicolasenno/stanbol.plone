@@ -2,3 +2,4 @@
 <registry>
  <records interface="stanbol.plone.controlpanel.stanbolpanel.IStanbolSettings" />
 </registry>
+
