@@ -8,7 +8,7 @@
             appId="stanbol.plone"
             category="Products"
             condition_expr=""
-            url_expr="string:${portal_url}/stanbol-settings"
+            url_expr="string:${portal_url}/@@stanbol-settings"
             visible="True"
             i18n:attributes="title"
             >
