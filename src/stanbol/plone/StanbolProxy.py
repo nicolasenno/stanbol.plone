@@ -26,7 +26,6 @@ class EngineProxy(BrowserView):
         """
         self.context = context
         self.request = request
-    #
 
     def __call__(self):
         """
@@ -35,7 +34,7 @@ class EngineProxy(BrowserView):
         @return: the Stanbol engines results in json format or an empty json
                 object
         """
-        response = self.request.response
+        #response = self.request.response
         stanbol = get_stanbol(self.context)
         print self.request.form
         try:

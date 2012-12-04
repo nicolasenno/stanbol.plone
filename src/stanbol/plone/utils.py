@@ -14,5 +14,5 @@ def get_stanbol(context):
     protocol = settings.stanbol_server_protocol
     host = settings.stanbol_server_host
     port = settings.stanbol_server_port
-    return Stanbol(protocol+'://'+host+':'+str(port))
+    return Stanbol(protocol+'://'+host+':'+port)
 

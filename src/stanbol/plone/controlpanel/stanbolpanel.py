@@ -46,13 +46,13 @@ class IStanbolSettings(Interface):
         required=True,
         default=u'localhost',
     )
-    stanbol_server_port = Int (
+    stanbol_server_port = TextLine (
         title=u'Stanbol server port',
         description=_('help_stanbol_server_port',
             default=u'Please enter the port of your Stanbol server instance'
         ),
         required=True,
-        default=9000,
+        default=u'9000',
     )
 
 class StanbolControlPanelEditForm(controlpanel.RegistryEditForm):
@@ -75,3 +75,4 @@ class StanbolControlPanel(controlpanel.ControlPanelFormWrapper):
     Stanbol Control Panel Form
     """
     form = StanbolControlPanelEditForm
+
